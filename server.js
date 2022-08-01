@@ -33,8 +33,8 @@ app.post("/namelist/adjective", (req, res) => {
         res.status(200).json({"message": ` ${req.body.msg.newWord} was added 💪`});
     }  /*test*/
     else {res.json({"message": ` ${req.body.msg.newWord} already exists!`})
-}
-});  
+}    
+}); 
 
 
 
