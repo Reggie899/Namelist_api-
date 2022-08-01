@@ -32,39 +32,18 @@ app.post("/namelist/adjective", (req, res) => {
     if (importData[0].adjective.indexOf(req.body.msg.newWord) === -1) { importData[0].adjective.push(req.body.msg.newWord); 
         res.status(200).json({"message": ` ${req.body.msg.newWord} was added 💪`});
     }  /*test*/
-    else {res.send("not working")
+    else {res.json({"message": ` ${req.body.msg.newWord} already exists!`})
 }
 });
-
-
-// app.post("/namelist/adjective", (req, res) => {
-//     console.log('Got body:', req.body);
-//     if (importData[0].adjective.indexOf(req.body.msg.newWord) === -1) { importData[0].adjective.push(req.body.msg.newWord); 
-//         res.status(200).json({"message": "it worked"});
-//     }  /*test*/
-//     else {res.send("not working")
-// }
-// });
-
-// app.post('/namelist/adjective',  (req, res) => {
-//     // try {
-//       const request = req.body.msg.newWord;
-//       if (importData[0].adjective.indexOf(request) === -1) { importData[0].adjective.push(req.body.msg.newWord)}; 
-      
-//     res.json(request)
-//     // } catch (error) {
-//     //   console.log(error)
-//     // }
-//   })
 
 
 
 app.post("/namelist/noun", (req, res) => {
     console.log('Got body:', req.body);
     if (importData[0].noun.indexOf(req.body.msg.newWord) === -1) { importData[0].noun.push(req.body.msg.newWord); 
-        res.json(req.body.msg.newWord)
+        res.status(200).json({"message": ` ${req.body.msg.newWord} was added 💪`});
     }  
-    else {res.send("not working")
+    else {res.json({"message": ` ${req.body.msg.newWord} already exists!`})
 }
 });
 
@@ -74,11 +53,6 @@ app.get("/walloffame/newname", (req, res) => {
 
 app.post("/walloffame/newname", (req, res) => {
     console.log('Got body:', req.body);
-//     if (importData[0].noun.indexOf(req.body.msg.newWord) === -1) { importData[0].noun.push(req.body.msg.newWord); 
-//         res.send("it worked")
-//     }  
-//     else {res.send("not working")
-// }
  wallOfFame.push(req.body.msg.yourName)
 });
 
