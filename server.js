@@ -34,7 +34,7 @@ app.post("/namelist/adjective", (req, res) => {
     }  /*test*/
     else {res.json({"message": ` ${req.body.msg.newWord} already exists!`})
 }
-});
+});  
 
 
 
